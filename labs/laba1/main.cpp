@@ -4,14 +4,13 @@
 
 using namespace std;
 
-// Класс для решения системы линейных уравнений
-
 struct NumberWithUncertainty {
     double value;
     double uncertainty;
 
     NumberWithUncertainty(double val, double unc) : value(val), uncertainty(unc) {}
-    NumberWithUncertainty(){}
+    NumberWithUncertainty() {}
+
     NumberWithUncertainty calculate(const NumberWithUncertainty &b, char operation) const {
         NumberWithUncertainty result;
 
@@ -34,7 +33,6 @@ struct NumberWithUncertainty {
                     result.uncertainty = fabs(result.value) * sqrt(pow(uncertainty / (value * value), 2) +
                                                                    pow(b.uncertainty / (b.value * b.value), 2));
                 } else {
-                    // Обработка деления на ноль
                     cerr << "Error: Division by zero." << endl;
                     result.value = NAN;
                     result.uncertainty = NAN;
@@ -99,7 +97,6 @@ private:
     }
 };
 
-
 class MatrixSolver {
 public:
     MatrixSolver(const vector<vector<double>> &coefficients) : matrix(coefficients) {}
@@ -122,6 +119,25 @@ public:
                 cout << matrix[i][j] << " ";
             }
             cout << endl;
+        }
+    }
+
+    void solveModifiedGauss() {
+        vector<vector<double>> modifiedMatrix = matrix;  // Create a copy of the original matrix
+
+        // Apply the modified Gaussian elimination
+        modifiedGaussianElimination(modifiedMatrix);
+
+        // Extract the solution from the modified matrix
+        vector<double> modifiedSolution;
+        for (size_t i = 0; i < modifiedMatrix.size(); ++i) {
+            modifiedSolution.push_back(modifiedMatrix[i].back());
+        }
+
+        // Print the solution from the modified method
+        cout << "\nSolution using Modified Gaussian Elimination:" << endl;
+        for (size_t i = 0; i < modifiedSolution.size(); ++i) {
+            cout << "x" << i + 1 << " = " << modifiedSolution[i] << endl;
         }
     }
 
@@ -156,26 +172,65 @@ private:
             solution.push_back(matrix[i][n]);
         }
     }
+
+    // Function to perform modified Gaussian elimination
+    void modifiedGaussianElimination(vector<vector<double>> &matrix) {
+        int n = matrix.size();
+
+        for (int i = 0; i < n; i++) {
+            // Find the maximum element below the current row in the current column
+            double maxElement = abs(matrix[i][i]);
+            int maxRow = i;
+            for (int k = i + 1; k < n; k++) {
+                if (abs(matrix[k][i]) > maxElement) {
+                    maxElement = abs(matrix[k][i]);
+                    maxRow = k;
+                }
+            }
+
+            // Swap the rows to move the maximum element to the diagonal
+            swapRows(matrix, i, maxRow);
+
+            double pivot = matrix[i][i];
+
+            for (int j = i; j < n + 1; j++)
+                matrix[i][j] /= pivot;
+
+            for (int k = 0; k < n; k++) {
+                if (k != i) {
+                    double factor = matrix[k][i];
+                    for (int j = i; j < n + 1; j++)
+                        matrix[k][j] -= factor * matrix[i][j];
+                }
+            }
+        }
+    }
+
+    // Function to swap rows in a matrix
+    void swapRows(vector<vector<double>> &matrix, int row1, int row2) {
+        for (size_t i = 0; i < matrix[row1].size(); ++i) {
+            swap(matrix[row1][i], matrix[row2][i]);
+        }
+    }
 };
 
-// Класс для операций над числами с погрешностью
-
 int main() {
-    // Пример системы линейных уравнений
+    // Example system of linear equations
     vector<vector<double>> coefficients = {
         {-2, 1, -3, -8},
         {3, 1, -6, -9},
         {1, 1, 2, 5}};
 
-    // Решение системы линейных уравнений
+    // Solve the linear system using the standard Gaussian elimination method
     MatrixSolver matrixSolver(coefficients);
     matrixSolver.solve();
-
-    // Вывод результата
+    cout << "Solution using Gaussian Elimination:" << endl;
     matrixSolver.printSolution();
-    matrixSolver.printMatrix();
 
-    // Пример операций над числами с погрешностью
+    // Solve the linear system using the modified Gaussian elimination method
+    matrixSolver.solveModifiedGauss();
+    matrixSolver.printMatrix();
+    // Example operations with numbers and uncertainties
     NumberOperation numberOperation(2.384, 0.021, 9.485, 0.014);
     numberOperation.performOperations();
 
