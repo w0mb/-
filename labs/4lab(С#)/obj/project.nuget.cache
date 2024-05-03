@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iG9CfD9rUBJjz1MHgR3L6S0G6vuguZP+qGAze6WYkuUmBcFK9YieDzeav4RqUiHde84u1xKqOJXsvjcqBuEgJg==",
+  "dgSpecHash": "i/XStRr1dKF6eWYzwYhSMaN1lxAQ10jOyDDyXloZmsihwY77XV+c/ZuwszYw+HZE8p2VTF44BtyH1/zyV2FXCw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\вомб\\Desktop\\stud\\ComputationalMathematics\\labs\\4lab\\4lab.csproj",
+  "projectFilePath": "C:\\Users\\вомб\\Desktop\\stud\\ComputationalMathematics\\labs\\4lab(С#)\\4lab.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\вомб\\.nuget\\packages\\bouncycastle.cryptography\\2.3.0\\bouncycastle.cryptography.2.3.0.nupkg.sha512",
     "C:\\Users\\вомб\\.nuget\\packages\\enums.net\\4.0.1\\enums.net.4.0.1.nupkg.sha512",

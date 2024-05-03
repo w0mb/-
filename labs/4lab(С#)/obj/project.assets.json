@@ -1318,11 +1318,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\вомб\\Desktop\\stud\\ComputationalMathematics\\labs\\4lab\\4lab.csproj",
+      "projectUniqueName": "C:\\Users\\вомб\\Desktop\\stud\\ComputationalMathematics\\labs\\4lab(С#)\\4lab.csproj",
       "projectName": "4lab",
-      "projectPath": "C:\\Users\\вомб\\Desktop\\stud\\ComputationalMathematics\\labs\\4lab\\4lab.csproj",
+      "projectPath": "C:\\Users\\вомб\\Desktop\\stud\\ComputationalMathematics\\labs\\4lab(С#)\\4lab.csproj",
       "packagesPath": "C:\\Users\\вомб\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\вомб\\Desktop\\stud\\ComputationalMathematics\\labs\\4lab\\obj\\",
+      "outputPath": "C:\\Users\\вомб\\Desktop\\stud\\ComputationalMathematics\\labs\\4lab(С#)\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\вомб\\AppData\\Roaming\\NuGet\\NuGet.Config"
