@@ -3,73 +3,87 @@
 #include <cmath>
 
 using namespace std;
-struct NumberWithUncertainty {
+
+// Structure to represent numbers with uncertainty
+struct NumberWithUncertainty
+{
     double value;
     double uncertainty;
 
-    // Конструктор для создания числа с погрешностью
+    // Constructor to create a number with uncertainty
     NumberWithUncertainty(double val, double unc) : value(val), uncertainty(unc) {}
-    NumberWithUncertainty(){}
+    NumberWithUncertainty() {}
 };
 
-NumberWithUncertainty calculateWithUncertainty(const NumberWithUncertainty &a, const NumberWithUncertainty &b, char operation) {
-    // Пример вычисления с погрешностью для операций +, -, *, /
+// Structure to represent improper fractions
+struct ImproperFraction
+{
+    int whole;       // Whole part of the fraction
+    int numerator;   // Numerator
+    int denominator; // Denominator
+};
+
+// Function to calculate with uncertainty for basic operations: +, -, *, /
+NumberWithUncertainty calculateWithUncertainty(const NumberWithUncertainty &a, const NumberWithUncertainty &b, char operation)
+{
     NumberWithUncertainty result;
 
-    switch (operation) {
-        case '+':
-            result.value = a.value + b.value;
-            result.uncertainty = sqrt(pow(a.uncertainty, 2) + pow(b.uncertainty, 2));
-            break;
-        case '-':
-            result.value = a.value - b.value;
-            result.uncertainty = sqrt(pow(a.uncertainty, 2) + pow(b.uncertainty, 2));
-            break;
-        case '*':
-            result.value = a.value * b.value;
-            result.uncertainty = fabs(result.value) * sqrt(pow(a.uncertainty / a.value, 2) + pow(b.uncertainty / b.value, 2));
-            break;
-        case '/':
-            if (b.value != 0) {
-                result.value = a.value / b.value;
-                result.uncertainty = fabs(result.value) * sqrt(pow(a.uncertainty / (a.value * a.value), 2) +
-                                                               pow(b.uncertainty / (b.value * b.value), 2));
-            } else {
-                // Обработка деления на ноль
-                cerr << "Error: Division by zero." << endl;
-                result.value = NAN;
-                result.uncertainty = NAN;
-            }
-            break;
-        default:
-            cerr << "Error: Unsupported operation." << endl;
+    switch (operation)
+    {
+    case '+':
+        result.value = a.value + b.value;
+        result.uncertainty = sqrt(pow(a.uncertainty, 2) + pow(b.uncertainty, 2));
+        break;
+    case '-':
+        result.value = a.value - b.value;
+        result.uncertainty = sqrt(pow(a.uncertainty, 2) + pow(b.uncertainty, 2));
+        break;
+    case '*':
+        result.value = a.value * b.value;
+        result.uncertainty = fabs(result.value) * sqrt(pow(a.uncertainty / a.value, 2) + pow(b.uncertainty / b.value, 2));
+        break;
+    case '/':
+        if (b.value != 0)
+        {
+            result.value = a.value / b.value;
+            result.uncertainty = fabs(result.value) * sqrt(pow(a.uncertainty / (a.value * a.value), 2) +
+                                                           pow(b.uncertainty / (b.value * b.value), 2));
+        }
+        else
+        {
+            cerr << "Error: Division by zero." << endl;
             result.value = NAN;
             result.uncertainty = NAN;
-            break;
+        }
+        break;
+    default:
+        cerr << "Error: Unsupported operation." << endl;
+        result.value = NAN;
+        result.uncertainty = NAN;
+        break;
     }
 
     return result;
 }
 
-void printNumberWithUncertainty(const NumberWithUncertainty &number) {
+// Function to print a number with uncertainty
+void printNumberWithUncertainty(const NumberWithUncertainty &number)
+{
     cout << number.value << " +/- " << number.uncertainty;
 }
 
-// Function to perform Gaussian elimination
+// Function to perform Gaussian elimination for regular numbers
 void gaussianElimination(vector<vector<double>> &matrix)
 {
     int n = matrix.size();
 
     for (int i = 0; i < n; i++)
     {
-        // Pivot element
         double pivot = matrix[i][i];
 
-        // Make the diagonal element 1
         for (int j = i; j < n + 1; j++)
             matrix[i][j] /= pivot;
 
-        // Make the other rows 0
         for (int k = 0; k < n; k++)
         {
             if (k != i)
@@ -82,31 +96,96 @@ void gaussianElimination(vector<vector<double>> &matrix)
     }
 }
 
-// Function to solve the linear system using the modified Gaussian elimination method
+// Function to perform Gaussian elimination for improper fractions
+// Function to perform Gaussian elimination for improper fractions
+// Function to perform Gaussian elimination for improper fractions
+// Function to perform Gaussian elimination for improper fractions
+// Function to perform Gaussian elimination for improper fractions
+// Function to perform Gaussian elimination for improper fractions
+void gaussianElimination(vector<vector<ImproperFraction>> &matrix)
+{
+    cout << "Entering gaussianElimination function" << endl;
+    int n = matrix.size();
+
+    for (int i = 0; i < n; i++)
+    {
+        ImproperFraction pivot = matrix[i][i];
+
+        cout << "Pivot element: " << pivot.whole << " " << pivot.numerator << "/" << pivot.denominator << endl;
+
+        for (int j = i; j < n + 1; j++)
+        {
+            matrix[i][j].whole /= pivot.whole;
+            matrix[i][j].numerator /= pivot.numerator;
+            matrix[i][j].denominator /= pivot.denominator;
+        }
+
+        for (int k = 0; k < n; k++)
+        {
+            if (k != i)
+            {
+                ImproperFraction factor = matrix[k][i];
+                cout << "Factor element for row " << k + 1 << ": " << factor.whole << " " << factor.numerator << "/" << factor.denominator << endl;
+                for (int j = i; j < n + 1; j++)
+                {
+                    if (pivot.numerator != 0)
+                    {
+                        matrix[i][j].whole /= pivot.whole;
+                        matrix[i][j].numerator /= pivot.numerator;
+                        matrix[i][j].denominator /= pivot.denominator;
+                    }
+                    else
+                    {
+                        cerr << "Error: Division by zero." << endl;
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+    cout << "Exiting gaussianElimination function" << endl;
+}
+
+// Function to solve the linear system using Gaussian elimination for regular numbers
 vector<double> solveLinearSystem(const vector<vector<double>> &coefficients)
 {
     int n = coefficients.size();
-
-    // Create a copy of the coefficients matrix to avoid modifying the original
     vector<vector<double>> matrix = coefficients;
-
-    // Apply Gaussian elimination
     gaussianElimination(matrix);
-
-    // Extract the solution from the augmented matrix
     vector<double> solution;
     for (int i = 0; i < n; i++)
     {
         solution.push_back(matrix[i][n]);
     }
-
     return solution;
 }
 
+// Function to solve the linear system using Gaussian elimination for improper fractions
+vector<ImproperFraction> solveLinearSystem(const vector<vector<ImproperFraction>> &coefficients)
+{
+    cout << "Entering solveLinearSystem function" << endl;
+    int n = coefficients.size();
+    vector<vector<ImproperFraction>> matrix = coefficients;
+    gaussianElimination(matrix);
+    vector<ImproperFraction> solution;
+    for (int i = 0; i < n; i++)
+    {
+        solution.push_back(matrix[i][n]);
+    }
+    cout << "Solution found: ";
+    for (auto &fraction : solution)
+    {
+        cout << fraction.whole << " " << fraction.numerator << "/" << fraction.denominator << " ";
+    }
+    cout << endl;
+    return solution;
+}
+
+// Function to print a regular matrix
 void print_matrix(const vector<vector<double>> &matrix)
 {
     int n = matrix.size();
-
     for (int i = 0; i < n; i++)
     {
         cout << endl;
@@ -116,73 +195,116 @@ void print_matrix(const vector<vector<double>> &matrix)
     cout << endl;
 }
 
-template <typename T>
-void printSolution(const T &solution);
+// Function to print a matrix of improper fractions
+void print_matrix(const vector<vector<ImproperFraction>> &matrix)
+{
+    int n = matrix.size();
+    for (int i = 0; i < n; i++)
+    {
+        cout << endl;
+        for (int j = 0; j < matrix[i].size(); j++)
+            cout << matrix[i][j].whole << " " << matrix[i][j].numerator << "/" << matrix[i][j].denominator << " ";
+    }
+    cout << endl;
+}
 
-// Specialization for vector<double>
-template <>
-void printSolution(const vector<double> &solution) {
+// Function to print the solution of a linear system for regular numbers
+void printSolution(const vector<double> &solution)
+{
     int n = solution.size();
     cout << "Solution to the system of equations:" << endl;
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         cout << "x" << i + 1 << " = " << solution[i] << endl;
     }
 }
 
-// Specialization for vector<vector<double>>
-template <>
-void printSolution(const vector<vector<double>> &solution) {
+// Function to print the solution of a linear system for improper fractions
+// Function to print the solution of a linear system for improper fractions
+void printSolution(const vector<ImproperFraction> &solution)
+{
     int n = solution.size();
     cout << "Solution to the system of equations:" << endl;
-    for (int i = 0; i < n; i++) {
-        cout << "x" << i + 1 << " = " << solution[i][n] << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout << "x" << i + 1 << " = " << solution[i].whole << " " << solution[i].numerator << "/" << solution[i].denominator << endl;
     }
 }
 
 int main()
 {
-    // Example system of linear equations
-    vector<vector<double>> coefficients = {
-        {-2, 1, -3, -8},
-        {3, 1, -6, -9},
-        {1, 1, 2, 5}};
+    char choice;
+    cout << "Enter 'n' for regular numbers or 'f' for improper fractions: ";
+    cin >> choice;
 
-    // Solve the linear system
-    vector<double> solution = solveLinearSystem(coefficients);
-    gaussianElimination(coefficients);
-    print_matrix(coefficients);
-    // Printing the solution
-    printSolution(solution);
-    cout << endl;
-    printSolution(coefficients);
+    if (choice == 'n')
+    {
+        // Solving linear system with regular numbers
+        vector<vector<double>> coefficients;
+        // Input matrix from user
+        cout << "Enter the coefficients matrix:" << endl;
+        // Assuming the matrix is square
+        int size;
+        cout << "Enter the size of the square matrix: ";
+        cin >> size;
+        cout << "Enter the coefficients separated by space:" << endl;
+        for (int i = 0; i < size; i++)
+        {
+            vector<double> row;
+            for (int j = 0; j < size + 1; j++)
+            {
+                double num;
+                cin >> num;
+                row.push_back(num);
+            }
+            coefficients.push_back(row);
+        }
 
-//--------------------------------------------------------------------------------------------------------//
-    NumberWithUncertainty a(2.384, 0.021);
-    NumberWithUncertainty b(9.485, 0.014);
+        // Solve the linear system
+        vector<double> solution = solveLinearSystem(coefficients);
 
-    // Вычисление с погрешностью для операций +, -, *, /
-    NumberWithUncertainty resultAdd = calculateWithUncertainty(a, b, '+');
-    NumberWithUncertainty resultSubtract = calculateWithUncertainty(a, b, '-');
-    NumberWithUncertainty resultMultiply = calculateWithUncertainty(a, b, '*');
-    NumberWithUncertainty resultDivide = calculateWithUncertainty(a, b, '/');
+        // Print the solution
+        printSolution(solution);
+    }
+    else if (choice == 'f')
+    {
+        // Solving linear system with improper fractions
+        vector<vector<ImproperFraction>> coefficients = {
+            {{-2, 1, 1}, {1, 1, 1}, {-3, 1, 1}, {-8, 1, 1}},
+            {{3, 1, 1}, {1, 1, 1}, {-6, 1, 1}, {-9, 1, 1}},
+            {{1, 1, 1}, {1, 1, 1}, {2, 1, 1}, {5, 1, 1}}};
+        // Input matrix from user
+        // cout << "Enter the coefficients matrix:" << endl;
+        // // Assuming the matrix is square
+        // // Assuming the matrix is square
+        // int size;
+        // cout << "Enter the size of the square matrix: ";
+        // cin >> size;
+        // cout << "Enter coefficients separated by space in the format 'whole numerator/denominator':" << endl;
+        // for (int i = 0; i < size; i++)
+        // {
+        //     vector<ImproperFraction> row;
+        //     for (int j = 0; j < size + 1; j++)
+        //     {
+        //         ImproperFraction fraction;
+        //         char slash;
+        //         cout << "Enter the coefficient for row " << i + 1 << ", column " << j + 1 << " in the format 'whole numerator/denominator': ";
+        //         cin >> fraction.whole >> fraction.numerator >> slash >> fraction.denominator;
+        //         row.push_back(fraction);
+        //     }
+        //     coefficients.push_back(row);
+        // }
 
-    // Вывод результатов
-    cout << "Addition: ";
-    printNumberWithUncertainty(resultAdd);
-    cout << endl;
+        // Solve the linear system
+        vector<ImproperFraction> solution = solveLinearSystem(coefficients);
 
-    cout << "Subtraction: ";
-    printNumberWithUncertainty(resultSubtract);
-    cout << endl;
-
-    cout << "Multiplication: ";
-    printNumberWithUncertainty(resultMultiply);
-    cout << endl;
-
-    cout << "Division: ";
-    printNumberWithUncertainty(resultDivide);
-    cout << endl;
-
+        // Print the solution
+        printSolution(solution);
+    }
+    else
+    {
+        cerr << "Invalid choice. Please enter 'n' or 'f'." << endl;
+    }
 
     return 0;
 }

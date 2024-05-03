@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vital\\OneDrive\\VS Code projects\\4 semester\\Math\\4lab\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AF16CF7E-580B-45EF-AB23-FABC4C22922F}|4lab.csproj|c:\\users\\vital\\onedrive\\vs code projects\\4 semester\\math\\4lab\\equation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF16CF7E-580B-45EF-AB23-FABC4C22922F}|4lab.csproj|solutionrelative:equation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF16CF7E-580B-45EF-AB23-FABC4C22922F}|4lab.csproj|c:\\users\\vital\\onedrive\\vs code projects\\4 semester\\math\\4lab\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF16CF7E-580B-45EF-AB23-FABC4C22922F}|4lab.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF16CF7E-580B-45EF-AB23-FABC4C22922F}|4lab.csproj|c:\\users\\vital\\onedrive\\vs code projects\\4 semester\\math\\4lab\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF16CF7E-580B-45EF-AB23-FABC4C22922F}|4lab.csproj|solutionrelative:state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF16CF7E-580B-45EF-AB23-FABC4C22922F}|4lab.csproj|c:\\users\\vital\\onedrive\\vs code projects\\4 semester\\math\\4lab\\painter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF16CF7E-580B-45EF-AB23-FABC4C22922F}|4lab.csproj|solutionrelative:painter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF16CF7E-580B-45EF-AB23-FABC4C22922F}|4lab.csproj|c:\\users\\vital\\onedrive\\vs code projects\\4 semester\\math\\4lab\\gaus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF16CF7E-580B-45EF-AB23-FABC4C22922F}|4lab.csproj|solutionrelative:gaus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF16CF7E-580B-45EF-AB23-FABC4C22922F}|4lab.csproj|c:\\users\\vital\\onedrive\\vs code projects\\4 semester\\math\\4lab\\4lab.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{AF16CF7E-580B-45EF-AB23-FABC4C22922F}|4lab.csproj|solutionrelative:4lab.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 245,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Painter.cs",
+              "DocumentMoniker": "C:\\Users\\vital\\OneDrive\\VS Code projects\\4 semester\\Math\\4lab\\Painter.cs",
+              "RelativeDocumentMoniker": "Painter.cs",
+              "ToolTip": "C:\\Users\\vital\\OneDrive\\VS Code projects\\4 semester\\Math\\4lab\\Painter.cs",
+              "RelativeToolTip": "Painter.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAAwDcAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T12:41:45.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Gaus.cs",
+              "DocumentMoniker": "C:\\Users\\vital\\OneDrive\\VS Code projects\\4 semester\\Math\\4lab\\Gaus.cs",
+              "RelativeDocumentMoniker": "Gaus.cs",
+              "ToolTip": "C:\\Users\\vital\\OneDrive\\VS Code projects\\4 semester\\Math\\4lab\\Gaus.cs",
+              "RelativeToolTip": "Gaus.cs",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAYwE8AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T12:30:47.486Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "State.cs",
+              "DocumentMoniker": "C:\\Users\\vital\\OneDrive\\VS Code projects\\4 semester\\Math\\4lab\\State.cs",
+              "RelativeDocumentMoniker": "State.cs",
+              "ToolTip": "C:\\Users\\vital\\OneDrive\\VS Code projects\\4 semester\\Math\\4lab\\State.cs",
+              "RelativeToolTip": "State.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAAAgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T11:49:15.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "4lab.csproj",
+              "DocumentMoniker": "C:\\Users\\vital\\OneDrive\\VS Code projects\\4 semester\\Math\\4lab\\4lab.csproj",
+              "RelativeDocumentMoniker": "4lab.csproj",
+              "ToolTip": "C:\\Users\\vital\\OneDrive\\VS Code projects\\4 semester\\Math\\4lab\\4lab.csproj",
+              "RelativeToolTip": "4lab.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-28T14:59:46.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Equation.cs",
+              "DocumentMoniker": "C:\\Users\\vital\\OneDrive\\VS Code projects\\4 semester\\Math\\4lab\\Equation.cs",
+              "RelativeDocumentMoniker": "Equation.cs",
+              "ToolTip": "C:\\Users\\vital\\OneDrive\\VS Code projects\\4 semester\\Math\\4lab\\Equation.cs",
+              "RelativeToolTip": "Equation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T15:03:42.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vital\\OneDrive\\VS Code projects\\4 semester\\Math\\4lab\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\vital\\OneDrive\\VS Code projects\\4 semester\\Math\\4lab\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAACEBAAAAAAAAAAAgwAABAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T13:33:11.906Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
